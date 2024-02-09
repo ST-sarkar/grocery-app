@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#A986E8"
+    tools:context=".SplashInsideActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annu's"
+            android:textColor="#8BC34A"
+            android:textSize="40sp"
+            android:id="@+id/tv_1"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grocery"
+            android:textSize="40sp"
+            android:textColor="#FF9800"
+            android:id="@+id/tv_2"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:id="@+id/lottfile"
+        app:lottie_rawRes="@raw/orders"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+
+
+
+
+</LinearLayout>
