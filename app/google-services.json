@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1040190610089",
+    "firebase_url": "https://db-only-d6c3a-default-rtdb.firebaseio.com",
+    "project_id": "db-only-d6c3a",
+    "storage_bucket": "db-only-d6c3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040190610089:android:48dc1851d1e271a0f167b8",
+        "android_client_info": {
+          "package_name": "com.example.annusgroceries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040190610089-5rgg8p74n1k724r2icorg4m11p1c6scn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2YO8Tp3Sr83Q18JJK0Eh8qZujjjV0Pqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040190610089-5rgg8p74n1k724r2icorg4m11p1c6scn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

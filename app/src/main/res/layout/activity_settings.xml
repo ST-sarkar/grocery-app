@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:background="@drawable/profile"
+    tools:context=".SettingsActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile Update"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textColor="#4CAF50"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_baseline_person_24"
+         />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/cd1"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/user_name"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/toolbar1"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:hint="Enter Name"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:background="@drawable/edittext_background"
+             />
+
+        <EditText
+            android:id="@+id/user_phone"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:hint="Enter Phone number"
+            android:gravity="center_horizontal"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:background="@drawable/edittext_background"
+             />
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="340dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:hint="Enter email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:background="@drawable/edittext_background"
+                />
+
+        <EditText
+            android:id="@+id/user_address"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:hint="Enter Address"
+            android:inputType="textPostalAddress"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:background="@drawable/edittext_background"
+             />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="submit"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_logout"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Logout"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
