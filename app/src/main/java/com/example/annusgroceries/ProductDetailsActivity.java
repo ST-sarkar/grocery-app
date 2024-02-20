@@ -134,15 +134,19 @@ public class ProductDetailsActivity extends AppCompatActivity implements Payment
             public void onClick(View view) {
                 DatabaseReference reference= FirebaseDatabase.getInstance().getReference("CartData");
                 FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-                if(!name.isEmpty() && !desc.isEmpty() &&  !price.isEmpty() && !unit.isEmpty() && !qty.isEmpty() && !image.isEmpty() ){
-                    //creating object of cart data to set data in realtime database
-                    CartData u=new CartData(name,desc,price,unit,qty,image);
-                    reference.child(user.getUid()).child(key).setValue(u);
+                try {
+                    if (!name.isEmpty() && !desc.isEmpty() && !price.isEmpty() && !unit.isEmpty() && !qty.isEmpty() && !image.isEmpty()) {
+                        //creating object of cart data to set data in realtime database
+                        CartData u = new CartData(name, desc, price, unit, qty, image);
+                        reference.child(user.getUid()).child(key).setValue(u);
 
-                    Toast.makeText(ProductDetailsActivity.this, "product added to cart", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProductDetailsActivity.this, "product added to cart", Toast.LENGTH_SHORT).show();
 
-                }else {
-                    Toast.makeText(ProductDetailsActivity.this, "product not added to cart", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ProductDetailsActivity.this, "product not added to cart", Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception e){
+                    Toast.makeText(ProductDetailsActivity.this, ""+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }

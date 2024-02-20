@@ -81,10 +81,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return cartList.size();
     }
 
+    /*
     public void updateItemList(List<CartData> newItems) {
         cartList = newItems;
         notifyDataSetChanged();  // This method notifies the adapter to refresh the RecyclerView
     }
+
+     */
 
     public  static class CartViewHolder extends RecyclerView.ViewHolder{
 

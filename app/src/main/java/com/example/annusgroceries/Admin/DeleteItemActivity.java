@@ -9,13 +9,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annusgroceries.Model.uploadPost;
 import com.example.annusgroceries.R;
 import com.example.annusgroceries.adapter.DeleteAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -102,6 +107,55 @@ public class DeleteItemActivity extends AppCompatActivity {
                         Toast.makeText(DeleteItemActivity.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
+                new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                    @Override
+                    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                        String user=deleteAdapter.getUser(viewHolder.getAdapterPosition());
+
+                        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("AllItems");
+                        reference.child(user).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                Toast.makeText(DeleteItemActivity.this, "Product Successfully Removed ", Toast.LENGTH_SHORT).show();
+                                allitemlist.remove(viewHolder.getAdapterPosition());
+                                userList.remove(viewHolder.getAdapterPosition());
+                                deleteAdapter.notifyDataSetChanged();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(DeleteItemActivity.this, "error :"+e, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("CartData");
+
+                        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                                    // Fetch posts for each user
+                                    ref.child(userSnapshot.getKey()).child(user).removeValue();
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                // Handle errors
+                            }
+                        });
+                    }
+                }).attachToRecyclerView(recyclerView);
+
             }
         });
 

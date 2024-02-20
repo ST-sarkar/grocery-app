@@ -66,6 +66,7 @@ public class DeleteAdapter extends RecyclerView.Adapter<DeleteAdapter.DeleteView
                 .into(holder.circularImageView);
 
 
+/*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +110,8 @@ public class DeleteAdapter extends RecyclerView.Adapter<DeleteAdapter.DeleteView
             }
         });
 
+ */
+
 
 
         //Toast.makeText(context, "in allcat adapter", Toast.LENGTH_SHORT).show();
@@ -118,6 +121,11 @@ public class DeleteAdapter extends RecyclerView.Adapter<DeleteAdapter.DeleteView
     @Override
     public int getItemCount() {
         return DcategoryList.size();
+    }
+
+    public String getUser(int pos)
+    {
+        return userList.get(pos);
     }
 
 

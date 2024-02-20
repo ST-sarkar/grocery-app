@@ -83,10 +83,12 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
         return categoryList.size();
     }
 
-    public void updateItemList(List<uploadPost> newItems) {
+    /*public void updateItemList(List<uploadPost> newItems) {
         categoryList = newItems;
         notifyDataSetChanged();  // This method notifies the adapter to refresh the RecyclerView
     }
+
+     */
 
     public  static class AllCategoryViewHolder extends RecyclerView.ViewHolder{
 

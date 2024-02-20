@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
 
                             Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                            if(userEmail.equals("sush@gmail.com") && userPassword.equals("sush@123")) {
+                            if(userEmail.equals("anushka@gmail.com") && userPassword.equals("anushka@123")) {
                                 startActivity(new Intent(LoginActivity.this,AdminHomeActivity.class));
                                 finish();
                             }else{

@@ -8,10 +8,9 @@
     android:padding="10dp"
     android:layout_margin="10dp"
     android:background="@drawable/edittext_background"
-    android:backgroundTint="#f44"
+    android:backgroundTint="#56EA5C"
     android:focusable="true"
     >
-
 
     <TextView
         android:id="@+id/product_name"
